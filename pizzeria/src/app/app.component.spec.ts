@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'prova-binding' title`, () => {
+  it(`should have the 'pizzeria' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('prova-binding');
+    expect(app.title).toEqual('pizzeria');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, prova-binding');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, pizzeria');
   });
 });

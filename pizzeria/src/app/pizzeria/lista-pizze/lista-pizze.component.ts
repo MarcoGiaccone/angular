@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { dummyPizzas } from './DUMMY_PIZZAS';
+import { dummyPizzas } from './pizza/DUMMY_PIZZAS';
 import { Pizza, PizzaComponent } from './pizza/pizza.component';
 
 @Component({
