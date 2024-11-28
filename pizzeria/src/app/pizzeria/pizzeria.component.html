@@ -1,1 +1,4 @@
-<p>pizzeria works!</p>
+<h1>Pizzeria "{{nome}}"</h1>
+<!-- <app-lista-pizze></app-lista-pizze> -->
+<app-lista-pizze (pizzaSelected)="onPizzaSelected($event)"></app-lista-pizze>
+<app-display [displayedPizza]="selectedPizza"></app-display>

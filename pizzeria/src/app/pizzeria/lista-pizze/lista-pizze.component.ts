@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { dummyPizzas } from './pizza/DUMMY_PIZZAS';
 import { Pizza, PizzaComponent } from './pizza/pizza.component';
 
@@ -11,4 +11,9 @@ import { Pizza, PizzaComponent } from './pizza/pizza.component';
 })
 export class ListaPizzeComponent {
   listaPizze: Pizza[] = dummyPizzas;
+  @Output() pizzaSelected = new EventEmitter<any>();
+
+  selectPizza(pizza: any): void {
+    this.pizzaSelected.emit(pizza); // Emit the selected pizza to the parent
+  }
 }

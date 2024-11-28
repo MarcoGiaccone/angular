@@ -1,6 +1,5 @@
 import { Pizza } from "./pizza.component";
 
-
 export const dummyPizzas: Pizza[] = [
     {
         id: 1,
