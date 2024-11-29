@@ -16,7 +16,6 @@ export class PizzeriaComponent {
   selectedPizza: any = null;
 
   onPizzaSelected(pizza: any): void {
-    this.selectedPizza = pizza; // Update selected pizza when emitted by PizzaListComponent
+    this.selectedPizza = pizza;
   }
-
 }
