@@ -1,0 +1,46 @@
+<h2>For e If</h2>
+<h3>Lista Studenti</h3>
+<!-- @for() e @if sono delle built-in directives -->
+<!-- track e' OBBLIGATORIO, serve a evitare lo shuffle e tiene traccia degli elementi attraverso un parametro. Migliora rendering e performance -->
+<ul>
+    @for(stud of listaStudenti; track $index) { 
+    <li>Id studente:{{$index + 1}} {{stud}}</li>
+}
+</ul>
+
+<h3>Lista Docenti</h3>
+<ul>
+    @for (doc of listaDocenti; track doc.id) {
+        @if (doc.disponibilita) {
+            <li>{{doc.nome}}</li>
+        } @else {
+            <li>{{doc.nome}} - Non disponibile</li>
+        }
+    }
+</ul>
+
+<!-- <h2>Versione Legacy</h2>
+<p>la versione legacy ha bisogno di essere importata nel component.ts
+    nelle versioni precedenti non va importata ma non esistono for e if
+     devo mettere nagli imports [NgFor, NgIf]
+    </p>
+
+<ul>
+    <li *ngFor="let doc of listaDocenti">
+        <span *ngIf="doc.disponibilita; else nonDisp">
+            {{doc.nome}}
+        </span>
+    </li>
+</ul>
+
+<ng-template #nonDisp>
+    questo docente non e' disponibile
+</ng-template> -->
+
+<h3>Responsabili Corso</h3>
+@for(respo of listaRespoCorso; track $index) {
+    <app-responsabili (disponibilita)="onMostraDisponibilita($event)" [respo]="respo"></app-responsabili>
+}
+@if(respoDisponibilita && !isClosed) {
+    <app-corso [disponibilita]="respoDisponibilita" (isClosed)="onIsClosed(isClosed)"></app-corso>
+}

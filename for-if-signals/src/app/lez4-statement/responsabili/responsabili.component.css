@@ -1,0 +1,7 @@
+.boxRespo {
+    border: 2px solid black;
+    width: 200px;
+    height: auto;
+    margin: 0.3rem 0;
+    padding: 1rem;
+}

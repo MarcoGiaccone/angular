@@ -1,0 +1,14 @@
+<div class="boxRespo">
+    <h4>{{respo.nome}} {{respo.cognome}}</h4>
+    <h5>Lista Corsi</h5>
+
+    @for(corso of respo.corsi; track $index) {
+        <li>{{corso}}</li>
+    }
+
+    <!-- al click voglio mostrare in un altro component la disponibilita' del docente
+    Se i corsi sono mmaggiori o uguali a 3, il docente non ha piu disponibilita' per i corsi
+    Il component dev' essere renderizzato solo quando faccio click sul pulsante sottostante -->
+
+    <button (click)="onMostraDispo(respo.corsi.length)">Mostra disponibilita'</button>
+</div>

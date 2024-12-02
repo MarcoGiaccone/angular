@@ -1,0 +1,10 @@
+<h2>Intro</h2>
+
+<div>
+    <button (click)="onSelectRespo()">
+        <!--Non posso piu interpolare le stringhe in questo modo, anche le prop vanno modificate 
+        <span> {{selectedRespo.nome}} {{selectedRespo.cognome}} </span> -->
+        <span> {{selectedRespo().nome}} {{selectedRespo().cognome}} </span>
+        <img src="{{selectedRespo().image}}" alt="" width="50px">
+    </button>
+</div>
